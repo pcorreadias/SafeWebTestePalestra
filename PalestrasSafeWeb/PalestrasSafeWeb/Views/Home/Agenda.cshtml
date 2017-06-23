@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "Agenda";
+}
+
+<h2>Agenda</h2>
+
+<input type="button" value="Montar agenda" onclick="location.href='@Url.Action("MontaAgenda", "Home")'" />
+
+<hr />
+
+@{Html.RenderAction("ListaAgenda", "Home");}
+

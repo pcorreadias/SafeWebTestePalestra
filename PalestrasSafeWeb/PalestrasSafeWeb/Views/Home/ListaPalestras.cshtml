@@ -1,0 +1,51 @@
+﻿@model IEnumerable<PalestrasSafeWeb.Models.Palestras>
+
+@{
+    ViewBag.Title = "ListaPalestras";
+}
+
+<h2>ListaPalestras</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CriaPalestra")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NomePalestrante)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NomePalestra)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Duracao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiaPalestra)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomePalestrante)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomePalestra)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Duracao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiaPalestra)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
