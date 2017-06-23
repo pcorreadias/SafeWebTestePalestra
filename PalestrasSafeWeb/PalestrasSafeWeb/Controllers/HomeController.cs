@@ -55,7 +55,7 @@ namespace PalestrasSafeWeb.Controllers
                     db.SaveChanges();
                 }
 
-                return View("ListaPalestras");
+                return RedirectToAction("ListaPalestras");
             }
             else
                 return View();
